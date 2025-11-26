@@ -2,7 +2,63 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Development]
+## [1.4.0]
+
+- Added support to using irregular volume rendering, i.e. Volume (IndeX), for VTK unstructured
+  datasets.
+- Fixed kit web streaming dependencies for Kit 108 in  `omni.cae_streaming.kit` app.
+
+## [1.3.4]
+
+- Fixed typo in Flow algorithms causing runtime errors
+
+## [1.3.3]
+
+* Fixed API error in NanoVDBHelper.
+* Fixed bug in DataSetEmitter which resulted in Root layer being populated with nanovdb values.
+
+## [1.3.2]
+
+* Fix issue on Windows when passing int arrays to UsdRt
+
+## [1.3.1]
+
+* Backwards compatibility issue introduced in 1.3.0: fix bug causing errors when volume stages
+  did not have `Material/Colormap` prim present.
+
+## [1.3.0]
+
+## Changes
+
+* Points, Glyphs, External Faces now support coloring by vectors. When coloring with vectors, the
+  vector magnitude is used for coloring.
+* Cleaned up code for resetting color ranges for colormaps, and domains on MDL shaders. The ranges are automatically
+  reset if value is invalid (i.e. min > max) or if the field used to color with is changed.
+
+## [1.2.0]
+
+### Changes
+
+* Streamlines now supports passing arbitrary fields as primvars to the shaders.
+
+### Bug Fixes
+
+* Ensured IndeX algorithms use proper edit-layer when updating attributes on prims during execution
+  to avoid clobbering root layer.
+
+## [1.1.0]
+
+### Changes
+
+* Updates to use support Kit 108.0.0
+
+### Bug fixes
+
+* Fixed inability to correctly locate shaders and imported files when using nucleus stages by ensure
+  correct scheme (`file:`) is added to such paths.
+* Fixed texture PNGs to be non-lfs, avoiding the need to install `git lfs` for basic operation.
+
+## [1.0.0]
 
 ### Changes
 
